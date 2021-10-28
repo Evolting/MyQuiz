@@ -37,10 +37,7 @@ namespace QuizApp
             this.btnHome = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.ucAboutUs1 = new QuizApp.ucAboutUs();
-            this.ucHome1 = new QuizApp.ucHome();
-            this.ucMyQuiz1 = new QuizApp.ucMyQuiz();
-            this.ucSearch1 = new QuizApp.ucSearch();
+            this.pnMyQuiz = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +48,7 @@ namespace QuizApp
             this.panel1.Controls.Add(this.btnMyQuiz);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Location = new System.Drawing.Point(31, 78);
+            this.panel1.Location = new System.Drawing.Point(12, 78);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(116, 288);
             this.panel1.TabIndex = 1;
@@ -64,7 +61,6 @@ namespace QuizApp
             this.btnProfile.TabIndex = 4;
             this.btnProfile.Text = "My Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnAboutUs
             // 
@@ -74,7 +70,6 @@ namespace QuizApp
             this.btnAboutUs.TabIndex = 3;
             this.btnAboutUs.Text = "About Us";
             this.btnAboutUs.UseVisualStyleBackColor = true;
-            this.btnAboutUs.Click += new System.EventHandler(this.btnAboutUs_Click);
             // 
             // btnMyQuiz
             // 
@@ -104,11 +99,11 @@ namespace QuizApp
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(43, 740);
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLogout.Location = new System.Drawing.Point(24, 591);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(94, 29);
             this.btnLogout.TabIndex = 2;
@@ -126,50 +121,22 @@ namespace QuizApp
             this.label1.TabIndex = 4;
             this.label1.Text = "MyQuiz!";
             // 
-            // ucAboutUs1
+            // pnMyQuiz
             // 
-            this.ucAboutUs1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ucAboutUs1.Location = new System.Drawing.Point(179, 78);
-            this.ucAboutUs1.Name = "ucAboutUs1";
-            this.ucAboutUs1.Size = new System.Drawing.Size(1195, 691);
-            this.ucAboutUs1.TabIndex = 5;
-            // 
-            // ucHome1
-            // 
-            this.ucHome1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ucHome1.Location = new System.Drawing.Point(179, 78);
-            this.ucHome1.Name = "ucHome1";
-            this.ucHome1.Size = new System.Drawing.Size(1195, 691);
-            this.ucHome1.TabIndex = 6;
-            // 
-            // ucMyQuiz1
-            // 
-            this.ucMyQuiz1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ucMyQuiz1.Location = new System.Drawing.Point(179, 78);
-            this.ucMyQuiz1.Name = "ucMyQuiz1";
-            this.ucMyQuiz1.Size = new System.Drawing.Size(1195, 691);
-            this.ucMyQuiz1.TabIndex = 7;
-            // 
-            // ucSearch1
-            // 
-            this.ucSearch1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ucSearch1.Location = new System.Drawing.Point(179, 78);
-            this.ucSearch1.Name = "ucSearch1";
-            this.ucSearch1.Size = new System.Drawing.Size(1195, 691);
-            this.ucSearch1.TabIndex = 8;
+            this.pnMyQuiz.Location = new System.Drawing.Point(148, 77);
+            this.pnMyQuiz.Name = "pnMyQuiz";
+            this.pnMyQuiz.Size = new System.Drawing.Size(1021, 540);
+            this.pnMyQuiz.TabIndex = 5;
             // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 803);
-            this.Controls.Add(this.ucHome1);
-            this.Controls.Add(this.ucAboutUs1);
+            this.ClientSize = new System.Drawing.Size(1181, 632);
+            this.Controls.Add(this.pnMyQuiz);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ucSearch1);
-            this.Controls.Add(this.ucMyQuiz1);
             this.Name = "fHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyQuiz 0.5";
@@ -188,10 +155,7 @@ namespace QuizApp
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnProfile;
-        private ucAboutUs ucAboutUs1;
-        private ucHome ucHome1;
-        private ucMyQuiz ucMyQuiz1;
-        private ucSearch ucSearch1;
+        private System.Windows.Forms.Panel pnMyQuiz;
     }
 }
 

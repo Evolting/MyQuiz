@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuizApp.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,39 +13,40 @@ namespace QuizApp
 {
     public partial class fHome : Form
     {
+        DAO.QuizDAO qdb = new DAO.QuizDAO();
+
         public fHome()
         {
             InitializeComponent();
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            ucHome1.BringToFront();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            ucSearch1.BringToFront();
+            this.Close();
         }
 
         private void btnMyQuiz_Click(object sender, EventArgs e)
         {
-            ucMyQuiz1.BringToFront();
+            if (!pnMyQuiz.Controls.Contains(ucMyQuiz.Instance))
+            {
+                pnMyQuiz.Controls.Add(ucMyQuiz.Instance);
+                ucMyQuiz.Instance.Dock = DockStyle.Fill;
+                ucMyQuiz.Instance.BringToFront();
+            }
+            else
+                ucMyQuiz.Instance.BringToFront();
         }
 
-        private void btnProfile_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void btnAboutUs_Click(object sender, EventArgs e)
-        {
-            ucAboutUs1.BringToFront();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            if (!pnMyQuiz.Controls.Contains(ucSearch.Instance))
+            {
+                pnMyQuiz.Controls.Add(ucSearch.Instance);
+                ucSearch.Instance.Dock = DockStyle.Fill;
+                ucSearch.Instance.BringToFront();
+            }
+            else
+                ucSearch.Instance.BringToFront();
         }
     }
 }

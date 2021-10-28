@@ -32,6 +32,7 @@ namespace QuizApp
                 else
                 {
                     MessageBox.Show("Welcome to MyQuiz!");
+                    Common.user = udb.getUser(username, password);
                     this.Hide();
                     fHome home = new fHome();
                     home.ShowDialog();

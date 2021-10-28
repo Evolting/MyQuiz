@@ -5,21 +5,10 @@ using System.IO;
 using System.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Data.SqlClient;
-
+using QuizApp.Model;
 
 namespace QuizApp.DAO
 {
-
-    class User
-    {
-        public int userID { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string img { get; set; }
-        public string email { get; set; }
-        public string createdDate { get; set; }
-        public int role { get; set; }
-    }
 
     class UserDAO
     {
