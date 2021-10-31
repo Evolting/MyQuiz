@@ -36,12 +36,15 @@ namespace QuizApp
             this.cbOrder = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.Learn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvResult
             // 
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Learn});
             this.dgvResult.Location = new System.Drawing.Point(-9, 83);
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.RowHeadersWidth = 51;
@@ -106,6 +109,14 @@ namespace QuizApp
             this.label2.TabIndex = 7;
             this.label2.Text = "Search Result: ";
             // 
+            // Learn
+            // 
+            this.Learn.HeaderText = "Learn This Quiz";
+            this.Learn.MinimumWidth = 6;
+            this.Learn.Name = "Learn";
+            this.Learn.UseColumnTextForButtonValue = true;
+            this.Learn.Width = 125;
+            // 
             // ucSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -134,5 +145,6 @@ namespace QuizApp
         private System.Windows.Forms.ComboBox cbOrder;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewButtonColumn Learn;
     }
 }
