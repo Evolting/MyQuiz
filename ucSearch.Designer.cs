@@ -36,21 +36,26 @@ namespace QuizApp
             this.cbOrder = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.Learn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtResultCount = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvResult
             // 
+            this.dgvResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Learn});
             this.dgvResult.Location = new System.Drawing.Point(-9, 83);
+            this.dgvResult.MultiSelect = false;
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.RowHeadersWidth = 51;
             this.dgvResult.RowTemplate.Height = 29;
+            this.dgvResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResult.Size = new System.Drawing.Size(1027, 454);
             this.dgvResult.TabIndex = 0;
+            this.dgvResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResult_CellContentClick);
+            this.dgvResult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResult_CellDoubleClick);
             // 
             // txtQuery
             // 
@@ -103,24 +108,45 @@ namespace QuizApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(432, 48);
+            this.label2.Location = new System.Drawing.Point(4, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Search Result: ";
             // 
-            // Learn
+            // label3
             // 
-            this.Learn.HeaderText = "Learn This Quiz";
-            this.Learn.MinimumWidth = 6;
-            this.Learn.Name = "Learn";
-            this.Learn.UseColumnTextForButtonValue = true;
-            this.Learn.Width = 125;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(762, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Showing:";
+            // 
+            // txtResultCount
+            // 
+            this.txtResultCount.Enabled = false;
+            this.txtResultCount.Location = new System.Drawing.Point(837, 48);
+            this.txtResultCount.Name = "txtResultCount";
+            this.txtResultCount.Size = new System.Drawing.Size(117, 27);
+            this.txtResultCount.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(960, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "results";
             // 
             // ucSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtResultCount);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cbOrder);
@@ -145,6 +171,8 @@ namespace QuizApp
         private System.Windows.Forms.ComboBox cbOrder;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewButtonColumn Learn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtResultCount;
+        private System.Windows.Forms.Label label4;
     }
 }

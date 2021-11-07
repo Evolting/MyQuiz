@@ -22,7 +22,7 @@ namespace QuizApp
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnMyQuiz_Click(object sender, EventArgs e)

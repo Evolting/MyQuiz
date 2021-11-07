@@ -44,9 +44,9 @@ namespace QuizApp
             
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Creating!", "Confirm", MessageBoxButtons.YesNo);
         }
     }
 }

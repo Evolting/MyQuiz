@@ -31,44 +31,45 @@ namespace QuizApp
         {
             this.dgvMyQuiz = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnTest = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyQuiz)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvMyQuiz
             // 
+            this.dgvMyQuiz.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMyQuiz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMyQuiz.Location = new System.Drawing.Point(4, 106);
+            this.dgvMyQuiz.Location = new System.Drawing.Point(4, 68);
             this.dgvMyQuiz.Name = "dgvMyQuiz";
             this.dgvMyQuiz.RowHeadersWidth = 51;
             this.dgvMyQuiz.RowTemplate.Height = 29;
-            this.dgvMyQuiz.Size = new System.Drawing.Size(1017, 431);
+            this.dgvMyQuiz.Size = new System.Drawing.Size(1017, 469);
             this.dgvMyQuiz.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(432, 25);
+            this.label1.Location = new System.Drawing.Point(453, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "My Quiz";
             // 
-            // btnTest
+            // btnCreate
             // 
-            this.btnTest.Location = new System.Drawing.Point(4, 62);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(94, 29);
-            this.btnTest.TabIndex = 2;
-            this.btnTest.Text = "Click Me";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            this.btnCreate.Location = new System.Drawing.Point(4, 16);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(138, 29);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.Text = "Create A Quiz";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // ucMyQuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvMyQuiz);
             this.Name = "ucMyQuiz";
@@ -83,6 +84,6 @@ namespace QuizApp
 
         private System.Windows.Forms.DataGridView dgvMyQuiz;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btnCreate;
     }
 }

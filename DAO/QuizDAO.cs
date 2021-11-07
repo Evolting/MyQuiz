@@ -6,6 +6,7 @@ using System.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Data.SqlClient;
 using QuizApp.Model;
+using System.Linq;
 
 namespace QuizApp.DAO
 {
@@ -27,6 +28,8 @@ namespace QuizApp.DAO
 
             return config["ConnectionString:MyQuizDB"];
         }
+
+
 
         public List<QuizSet> getSetByName(string name, string criteria, string order)
         {
@@ -77,6 +80,8 @@ namespace QuizApp.DAO
             return sList;
         }
 
+
+
         public List<QuizSet> getMySet()
         {
             List<QuizSet> sList = new List<QuizSet>();
@@ -122,6 +127,153 @@ namespace QuizApp.DAO
             }
 
             return sList;
+        }
+
+        
+        public List<Question> createQuestions(int setID)
+        {
+            connection = new SqlConnection(getConnectionString());
+
+
+            // lấy ra list các câu hỏi thuộc quizSet đã chọn
+            List<int> quizID = new List<int>();
+            string query = "select quizID from quiz where setID = @ID";
+            command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", setID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        quizID.Add(reader.GetInt32("quizID"));
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            // set up từng câu hỏi
+            List<Question> questions = new List<Question>();
+            for (int i = 0; i < quizID.Count; i++)
+            {
+                questions.Add(setUpQuestion(setID, quizID[i], i));
+            }
+
+            return questions;
+        }
+
+
+        public Question setUpQuestion(int setID, int quizID, int num)
+        {
+            Question question = new Question();
+            connection = new SqlConnection(getConnectionString());
+
+
+            // lấy ra câu hỏi
+            string query = "select * from quiz where quizID = @ID";
+            command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", quizID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        // đặt ID
+                        question.ID = num + 1;
+
+                        // lấy câu hỏi
+                        question.q = reader.GetString("term");
+
+                        // lấy câu hỏi
+                        question.quest = reader.GetString("term");
+
+                        // lấy key
+                        question.a = reader.GetString("definition");
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            // đây là các đáp án A, B, C, D sẽ hiện lên màn hình
+            Dictionary<string, string> ans = new Dictionary<string, string>();
+            
+
+            // lấy ngẫu nhiên 3 câu trả lời cùng quizSet và khác với key
+            List<string> others = new List<string>();
+            query = "select top 3 * from quiz where setID = @setID and quizID != @ID ORDER BY NEWID()";
+
+            command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@setID", setID);
+            command.Parameters.AddWithValue("@ID", quizID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        others.Add(reader.GetString("definition"));
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            others.Add(question.a);
+
+            Random rng = new Random();
+            var shuffle = others.OrderBy(a => rng.Next()).ToList();
+
+
+            // thêm các đáp án A, B, C, D
+            ans.Add("A", shuffle[0]);
+            ans.Add("B", shuffle[1]);
+            ans.Add("C", shuffle[2]);
+            ans.Add("D", shuffle[3]);
+
+
+            // ghép đáp án với đề
+            question.q += ":\n\n";
+            foreach(var key in ans)
+            {
+                question.q += $"{key.Key}. {key.Value} \n";
+            }
+
+            question.answers = ans;
+
+            return question;
         }
     }
 }

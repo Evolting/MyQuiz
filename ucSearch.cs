@@ -56,9 +56,29 @@ namespace QuizApp
                 if (order.Equals("Ascending")) order = "asc";
                 else order = "desc";
 
-                dgvResult.DataSource = qdb.getSetByName(query, criteria, order);
+                List<QuizSet> result =  qdb.getSetByName(query, criteria, order);
+                dgvResult.DataSource = result;
+                dgvResult.Columns[6].Visible = false;
+                txtResultCount.Text = result.Count.ToString();
             }
             else MessageBox.Show("Please enter a query first");
+        }
+
+        private void dgvResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            QuizDAO qdb = new QuizDAO();
+
+            int setID = Int32.Parse(dgvResult.CurrentRow.Cells[0].Value.ToString());
+            Test test = new Test();
+            test.score = 0;
+            test.questions = qdb.createQuestions(setID);
+            fTest f = new fTest(test);
+            f.ShowDialog();
         }
     }
 }
