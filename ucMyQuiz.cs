@@ -13,8 +13,8 @@ namespace QuizApp
     public partial class ucMyQuiz : UserControl
     {
         QuizDAO qdb = new QuizDAO();
-
         private static ucMyQuiz _instance;
+       
         public static ucMyQuiz Instance
         {
             get
@@ -41,10 +41,27 @@ namespace QuizApp
 
         private void ucMyQuiz_Load(object sender, EventArgs e)
         {
-            
+            Reload();
         }
 
         private void btnTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            CrudSET crudSET = new CrudSET();
+            crudSET.ShowDialog();
+            Reload();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
 
         }

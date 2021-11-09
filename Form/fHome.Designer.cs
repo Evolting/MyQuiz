@@ -48,34 +48,38 @@ namespace QuizApp
             this.panel1.Controls.Add(this.btnMyQuiz);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Location = new System.Drawing.Point(12, 78);
+            this.panel1.Location = new System.Drawing.Point(10, 58);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(116, 288);
+            this.panel1.Size = new System.Drawing.Size(102, 226);
             this.panel1.TabIndex = 1;
             // 
             // btnProfile
             // 
-            this.btnProfile.Location = new System.Drawing.Point(12, 189);
+            this.btnProfile.Location = new System.Drawing.Point(10, 142);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(94, 29);
+            this.btnProfile.Size = new System.Drawing.Size(82, 22);
             this.btnProfile.TabIndex = 4;
             this.btnProfile.Text = "My Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
             // 
             // btnAboutUs
             // 
-            this.btnAboutUs.Location = new System.Drawing.Point(12, 247);
+            this.btnAboutUs.Location = new System.Drawing.Point(10, 185);
+            this.btnAboutUs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAboutUs.Name = "btnAboutUs";
-            this.btnAboutUs.Size = new System.Drawing.Size(94, 29);
+            this.btnAboutUs.Size = new System.Drawing.Size(82, 22);
             this.btnAboutUs.TabIndex = 3;
             this.btnAboutUs.Text = "About Us";
             this.btnAboutUs.UseVisualStyleBackColor = true;
             // 
             // btnMyQuiz
             // 
-            this.btnMyQuiz.Location = new System.Drawing.Point(12, 133);
+            this.btnMyQuiz.Location = new System.Drawing.Point(10, 100);
+            this.btnMyQuiz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMyQuiz.Name = "btnMyQuiz";
-            this.btnMyQuiz.Size = new System.Drawing.Size(94, 29);
+            this.btnMyQuiz.Size = new System.Drawing.Size(82, 22);
             this.btnMyQuiz.TabIndex = 2;
             this.btnMyQuiz.Text = "My Quiz";
             this.btnMyQuiz.UseVisualStyleBackColor = true;
@@ -83,9 +87,10 @@ namespace QuizApp
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(12, 73);
+            this.btnSearch.Location = new System.Drawing.Point(10, 55);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(94, 29);
+            this.btnSearch.Size = new System.Drawing.Size(82, 22);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -93,9 +98,10 @@ namespace QuizApp
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(12, 13);
+            this.btnHome.Location = new System.Drawing.Point(10, 10);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(94, 29);
+            this.btnHome.Size = new System.Drawing.Size(82, 22);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
@@ -103,9 +109,10 @@ namespace QuizApp
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLogout.Location = new System.Drawing.Point(24, 591);
+            this.btnLogout.Location = new System.Drawing.Point(21, 443);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(94, 29);
+            this.btnLogout.Size = new System.Drawing.Size(82, 22);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -115,31 +122,34 @@ namespace QuizApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(439, 9);
+            this.label1.Location = new System.Drawing.Point(384, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 42);
+            this.label1.Size = new System.Drawing.Size(108, 33);
             this.label1.TabIndex = 4;
             this.label1.Text = "MyQuiz!";
             // 
             // pnMyQuiz
             // 
-            this.pnMyQuiz.Location = new System.Drawing.Point(148, 77);
+            this.pnMyQuiz.Location = new System.Drawing.Point(130, 58);
+            this.pnMyQuiz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnMyQuiz.Name = "pnMyQuiz";
-            this.pnMyQuiz.Size = new System.Drawing.Size(1021, 540);
+            this.pnMyQuiz.Size = new System.Drawing.Size(893, 405);
             this.pnMyQuiz.TabIndex = 5;
             // 
             // fHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1181, 632);
+            this.ClientSize = new System.Drawing.Size(1033, 474);
             this.Controls.Add(this.pnMyQuiz);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyQuiz 0.5";
+            this.Load += new System.EventHandler(this.fHome_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

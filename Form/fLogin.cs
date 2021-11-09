@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuizApp.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +35,7 @@ namespace QuizApp
                     MessageBox.Show("Welcome to MyQuiz!");
                     Common.user = udb.getUser(username, password);
                     this.Hide();
-                    fHome home = new fHome();
+                    fHome home = new fHome(udb.getUser(txtname.Text, mtxtpass.Text).userID);
                     home.ShowDialog();
                 }
             }

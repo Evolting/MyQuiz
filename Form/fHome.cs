@@ -1,4 +1,5 @@
 ﻿using QuizApp.DAO;
+using QuizApp.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,12 @@ namespace QuizApp
     public partial class fHome : Form
     {
         DAO.QuizDAO qdb = new DAO.QuizDAO();
+        public int userID;
+        public fHome(int u)
+        {
+            InitializeComponent();
+            this.userID = u;
+        }
 
         public fHome()
         {
@@ -22,13 +29,15 @@ namespace QuizApp
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+           
         }
 
         private void btnMyQuiz_Click(object sender, EventArgs e)
         {
             if (!pnMyQuiz.Controls.Contains(ucMyQuiz.Instance))
             {
+
                 pnMyQuiz.Controls.Add(ucMyQuiz.Instance);
                 ucMyQuiz.Instance.Dock = DockStyle.Fill;
                 ucMyQuiz.Instance.BringToFront();
@@ -47,6 +56,11 @@ namespace QuizApp
             }
             else
                 ucSearch.Instance.BringToFront();
+        }
+
+        private void fHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

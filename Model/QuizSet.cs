@@ -13,5 +13,7 @@ namespace QuizApp.Model
         public int quizCount { get; set; }
         public DateTime createdDate { get; set; }
         public bool privacy { get; set; }
+
+      
     }
 }
